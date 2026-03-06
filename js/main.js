@@ -184,26 +184,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── EMAIL SIGNUP FORM ─────────────────────────────────────
   const signupForm = document.getElementById('signupForm');
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEuvesE-mjkHJYZ8PYXuqKqCxmyfCoJYD55NuGAp7NATg2W4eJnxGbY5S86Azl6LOhiQ/exec';
 
   signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const formData = new FormData(signupForm);
     const data = Object.fromEntries(formData.entries());
-
-    // For now, just show success (no backend yet)
     const submitBtn = signupForm.querySelector('.btn-submit');
     submitBtn.classList.add('submitted');
 
-    // Store in localStorage as a simple backup until backend is ready
-    const signups = JSON.parse(localStorage.getItem('cafe333_signups') || '[]');
-    signups.push({ ...data, timestamp: new Date().toISOString() });
-    localStorage.setItem('cafe333_signups', JSON.stringify(signups));
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).catch(() => {
+      // Fallback: store locally if network fails
+      const signups = JSON.parse(localStorage.getItem('cafe333_signups') || '[]');
+      signups.push({ ...data, timestamp: new Date().toISOString() });
+      localStorage.setItem('cafe333_signups', JSON.stringify(signups));
+    });
 
-    // Reset form after delay
-    setTimeout(() => {
-      signupForm.reset();
-    }, 500);
+    setTimeout(() => { signupForm.reset(); }, 500);
   });
 
   // ─── IMAGE PLACEHOLDER GENERATION ──────────────────────────
