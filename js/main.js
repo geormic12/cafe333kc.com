@@ -205,7 +205,10 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('cafe333_signups', JSON.stringify(signups));
     });
 
-    setTimeout(() => { signupForm.reset(); }, 500);
+    setTimeout(() => {
+      signupForm.reset();
+      submitBtn.classList.remove('submitted');
+    }, 3000);
   });
 
   // ─── IMAGE PLACEHOLDER GENERATION ──────────────────────────
