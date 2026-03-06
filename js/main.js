@@ -197,8 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(APPS_SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: new URLSearchParams(data)
     }).catch(() => {
       // Fallback: store locally if network fails
       const signups = JSON.parse(localStorage.getItem('cafe333_signups') || '[]');
