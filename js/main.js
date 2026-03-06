@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
       position: absolute;
       width: ${1 + Math.random() * 2}px;
       height: ${1 + Math.random() * 2}px;
-      background: rgba(212, 168, 83, ${0.1 + Math.random() * 0.2});
+      background: rgba(74, 158, 255, ${0.08 + Math.random() * 0.15});
       border-radius: 50%;
       left: ${Math.random() * 100}%;
       top: ${Math.random() * 100}%;
@@ -239,12 +239,12 @@ document.addEventListener('DOMContentLoaded', () => {
         Math.min(width, height) * (0.1 + Math.random() * 0.2),
         0, Math.PI * 2
       );
-      ctx.fillStyle = `rgba(212, 168, 83, ${0.03 + Math.random() * 0.04})`;
+      ctx.fillStyle = `rgba(74, 158, 255, ${0.03 + Math.random() * 0.04})`;
       ctx.fill();
     }
 
     // Label text
-    ctx.fillStyle = 'rgba(212, 168, 83, 0.3)';
+    ctx.fillStyle = 'rgba(74, 158, 255, 0.3)';
     ctx.font = `${Math.min(width, height) * 0.06}px serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
