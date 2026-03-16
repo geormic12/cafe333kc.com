@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── HERO PARTICLE EFFECT ──────────────────────────────────
   const heroParticles = document.getElementById('heroParticles');
-
+  if (heroParticles) {
   const createParticle = () => {
     const particle = document.createElement('div');
     particle.style.cssText = `
@@ -181,12 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(createParticle, i * 500);
   }
   setInterval(createParticle, 2000);
+  } // end heroParticles guard
 
   // ─── EMAIL SIGNUP FORM ─────────────────────────────────────
   const signupForm = document.getElementById('signupForm');
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEuvesE-mjkHJYZ8PYXuqKqCxmyfCoJYD55NuGAp7NATg2W4eJnxGbY5S86Azl6LOhiQ/exec';
 
-  signupForm.addEventListener('submit', (e) => {
+  if (signupForm) signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const formData = new FormData(signupForm);
@@ -279,12 +280,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── PARALLAX SUBTLE EFFECT ────────────────────────────────
   const hero = document.querySelector('.hero-content');
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    if (scrolled < window.innerHeight) {
-      hero.style.transform = `translateY(${scrolled * 0.15}px)`;
-      hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
-    }
-  }, { passive: true });
+  if (hero) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (scrolled < window.innerHeight) {
+        hero.style.transform = `translateY(${scrolled * 0.15}px)`;
+        hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+      }
+    }, { passive: true });
+  }
 
 });

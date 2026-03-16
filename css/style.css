@@ -1270,6 +1270,80 @@ a:hover {
   color: var(--neon-blue);
 }
 
+/* ─── ABOUT PAGE ───────────────────────────────────────────── */
+.about-hero {
+  padding-top: calc(var(--section-pad) + 5rem);
+  background: var(--charcoal);
+}
+
+.about-story {
+  background: var(--charcoal);
+  padding-top: 0;
+}
+
+.about-story-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-story-content .lead {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--neon-blue);
+  text-shadow: 0 0 30px rgba(74, 158, 255, 0.15);
+  margin-bottom: 2rem;
+}
+
+.about-story-content p {
+  color: var(--cream-dark);
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.story-lines {
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--brass-dim);
+}
+
+.story-lines p {
+  color: var(--cream);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.story-quote {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--neon-blue);
+  text-shadow: 0 0 30px rgba(74, 158, 255, 0.15);
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--gold);
+  line-height: 1.4;
+}
+
+.about-concept {
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(74, 158, 255, 0.03) 0%, transparent 50%),
+    var(--midnight);
+}
+
+.about-position {
+  background: var(--charcoal);
+}
+
+.about-cta {
+  background:
+    radial-gradient(ellipse at center, rgba(74, 158, 255, 0.04) 0%, transparent 70%),
+    var(--midnight);
+}
+
 /* ─── FLOATING NOTES (ambient decoration) ───────────────────── */
 .floating-notes {
   position: fixed;
