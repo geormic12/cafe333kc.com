@@ -1272,8 +1272,8 @@ a:hover {
 
 /* ─── ABOUT PAGE ───────────────────────────────────────────── */
 .about-hero {
-  padding-top: calc(2rem + 5rem);
-  padding-bottom: 1rem;
+  padding-top: calc(2rem + 5rem) !important;
+  padding-bottom: 1rem !important;
   background: var(--charcoal);
 }
 
@@ -1348,7 +1348,7 @@ a:hover {
 /* ─── LINER NOTES CARDS ────────────────────────────────────── */
 .liner-notes-grid-section {
   background: var(--charcoal);
-  padding-top: 1rem;
+  padding-top: 1rem !important;
 }
 
 .liner-notes-grid {
