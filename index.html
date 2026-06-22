@@ -413,32 +413,52 @@
   </section>
 
   <!-- ═══════════════════════════════════════════ -->
-  <!-- SOCIAL PROOF                                -->
+  <!-- SOCIAL PROOF — LIVE GOOGLE REVIEWS          -->
   <!-- ═══════════════════════════════════════════ -->
-  <!-- NOTE: Replace the quotes/authors below with real Google reviews,
-       media mentions, or a Kansas City Star pull-quote when available. -->
+  <!-- ┌─────────────────────────────────────────────────────────────┐
+       │  HOW TO GO LIVE WITH REAL GOOGLE REVIEWS (one-time, ~5 min): │
+       │                                                             │
+       │  1. Go to https://featurable.com and sign up (free, no card)│
+       │  2. Connect your Google Business Profile for "Café 333"     │
+       │  3. Create a widget, choose a layout, and copy the WIDGET ID│
+       │     (looks like: 8a1b2c3d-4e5f-...)                         │
+       │  4. Paste that ID in TWO places below where you see          │
+       │     REPLACE_WITH_WIDGET_ID                                  │
+       │  5. Save + push. Live Google reviews replace the fallback   │
+       │     cards automatically and refresh themselves daily.       │
+       │                                                             │
+       │  Until then, the 3 fallback cards below stay visible so the │
+       │  section never looks empty.                                 │
+       └─────────────────────────────────────────────────────────────┘ -->
   <section id="reviews" class="section social-proof">
     <div class="container">
       <div class="section-header section-header--center">
         <span class="section-label">What People Are Saying</span>
         <h2 class="section-title">The Room Speaks<br><em>for Itself</em></h2>
       </div>
-      <div class="testimonial-grid">
-        <article class="testimonial">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">"Finally, a night out where the music is the point. The room is gorgeous, the drinks are genuinely creative, and we remembered every minute of it."</p>
-          <p class="testimonial-author">— A Café 333 Guest</p>
-        </article>
-        <article class="testimonial">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">"A real listening room in Kansas City. Close to the stage, easy to talk over dinner, and the food more than holds its own. Our new date-night spot."</p>
-          <p class="testimonial-author">— A Café 333 Guest</p>
-        </article>
-        <article class="testimonial">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-quote">"Beautiful zero-proof drinks, serious food, and live jazz every night. This is what a night out is supposed to feel like."</p>
-          <p class="testimonial-author">— A Café 333 Guest</p>
-        </article>
+
+      <!-- Featurable live Google reviews widget mount.
+           When the widget ID is valid, Featurable replaces the fallback
+           content inside this div with live reviews. -->
+      <div id="featurable-widget" data-featurable-async data-widget-id="REPLACE_WITH_WIDGET_ID">
+        <!-- FALLBACK (shown until a valid widget ID is set above) -->
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">"Finally, a night out where the music is the point. The room is gorgeous, the drinks are genuinely creative, and we remembered every minute of it."</p>
+            <p class="testimonial-author">— A Café 333 Guest</p>
+          </article>
+          <article class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">"A real listening room in Kansas City. Close to the stage, easy to talk over dinner, and the food more than holds its own. Our new date-night spot."</p>
+            <p class="testimonial-author">— A Café 333 Guest</p>
+          </article>
+          <article class="testimonial">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">"Beautiful zero-proof drinks, serious food, and live jazz every night. This is what a night out is supposed to feel like."</p>
+            <p class="testimonial-author">— A Café 333 Guest</p>
+          </article>
+        </div>
       </div>
     </div>
   </section>
@@ -612,5 +632,8 @@
   <div class="floating-notes" aria-hidden="true" id="floatingNotes"></div>
 
   <script src="js/main.js"></script>
+  <!-- Featurable: live Google reviews loader. Activates only once a real
+       widget ID is set on #featurable-widget (see Social Proof section). -->
+  <script src="https://featurable.com/assets/bundle.js" charset="utf-8" defer></script>
 </body>
 </html>
