@@ -415,21 +415,10 @@
   <!-- ═══════════════════════════════════════════ -->
   <!-- SOCIAL PROOF — LIVE GOOGLE REVIEWS          -->
   <!-- ═══════════════════════════════════════════ -->
-  <!-- ┌─────────────────────────────────────────────────────────────┐
-       │  HOW TO GO LIVE WITH REAL GOOGLE REVIEWS (one-time, ~5 min): │
-       │                                                             │
-       │  1. Go to https://featurable.com and sign up (free, no card)│
-       │  2. Connect your Google Business Profile for "Café 333"     │
-       │  3. Create a widget, choose a layout, and copy the WIDGET ID│
-       │     (looks like: 8a1b2c3d-4e5f-...)                         │
-       │  4. Paste that ID in TWO places below where you see          │
-       │     REPLACE_WITH_WIDGET_ID                                  │
-       │  5. Save + push. Live Google reviews replace the fallback   │
-       │     cards automatically and refresh themselves daily.       │
-       │                                                             │
-       │  Until then, the 3 fallback cards below stay visible so the │
-       │  section never looks empty.                                 │
-       └─────────────────────────────────────────────────────────────┘ -->
+  <!-- Live Google reviews via Featurable (widget ca1465e2-...).
+       Reviews auto-refresh daily. The fallback cards inside the mount div
+       stay visible until the widget script loads / if it ever fails to. -->
+
   <section id="reviews" class="section social-proof">
     <div class="container">
       <div class="section-header section-header--center">
@@ -438,9 +427,9 @@
       </div>
 
       <!-- Featurable live Google reviews widget mount.
-           When the widget ID is valid, Featurable replaces the fallback
-           content inside this div with live reviews. -->
-      <div id="featurable-widget" data-featurable-async data-widget-id="REPLACE_WITH_WIDGET_ID">
+           Featurable replaces the fallback content inside this div with
+           live reviews once its script loads. -->
+      <div id="featurable-ca1465e2-45ba-4152-8e99-91b3c92fff55" data-featurable-async>
         <!-- FALLBACK (shown until a valid widget ID is set above) -->
         <div class="testimonial-grid">
           <article class="testimonial">
@@ -632,8 +621,7 @@
   <div class="floating-notes" aria-hidden="true" id="floatingNotes"></div>
 
   <script src="js/main.js"></script>
-  <!-- Featurable: live Google reviews loader. Activates only once a real
-       widget ID is set on #featurable-widget (see Social Proof section). -->
-  <script src="https://featurable.com/assets/bundle.js" charset="utf-8" defer></script>
+  <!-- Featurable: live Google reviews loader (see Social Proof section). -->
+  <script src="https://cdn.featurable.com/widget/v2/embed.js" defer charset="UTF-8"></script>
 </body>
 </html>
