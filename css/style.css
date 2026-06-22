@@ -1642,8 +1642,196 @@ a:hover {
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 
+/* ─── EXPERIENCE TIERS (Choose Your Night) ──────────────────── */
+.experience-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.tier-card {
+  position: relative;
+  background: rgba(24, 24, 36, 0.6);
+  border: 1px solid rgba(74, 158, 255, 0.08);
+  padding: 2.5rem 2rem;
+  transition: all 0.5s var(--ease-out);
+  display: flex;
+  flex-direction: column;
+}
+
+.tier-card:hover {
+  border-color: rgba(74, 158, 255, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(74, 158, 255, 0.05);
+}
+
+.tier-card--featured {
+  border-color: var(--gold);
+}
+
+.tier-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.tier-name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.tier-detail {
+  font-size: 0.95rem;
+  color: var(--slate);
+  line-height: 1.7;
+}
+
+.tier-highlights {
+  list-style: none;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--brass-dim);
+}
+
+.tier-highlights li {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--cream-dark);
+  padding: 0.35rem 0 0.35rem 1.4rem;
+  position: relative;
+}
+
+.tier-highlights li::before {
+  content: '♪';
+  position: absolute;
+  left: 0;
+  color: var(--neon-blue);
+}
+
+/* ─── SOCIAL PROOF ──────────────────────────────────────────── */
+.social-proof {
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(74, 158, 255, 0.04) 0%, transparent 50%),
+    var(--charcoal);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.testimonial {
+  background: rgba(24, 24, 36, 0.6);
+  border: 1px solid rgba(74, 158, 255, 0.08);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+.testimonial-quote {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--cream);
+  font-style: italic;
+  flex: 1;
+}
+
+.testimonial-author {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-top: 1.5rem;
+}
+
+/* ─── FAQ ───────────────────────────────────────────────────── */
+.faq {
+  background: var(--midnight);
+}
+
+.faq-list {
+  max-width: 820px;
+  margin: 3rem auto 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--brass-dim);
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.5rem 2.5rem 1.5rem 0;
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--cream);
+  transition: color 0.3s var(--ease-out);
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary:hover { color: var(--neon-blue); }
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-ui);
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.faq-item[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 0 1.75rem;
+  font-size: 1rem;
+  color: var(--slate);
+  line-height: 1.7;
+  max-width: 680px;
+}
+
 /* ─── RESPONSIVE ────────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .experience-tiers {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .experience-cards {
     grid-template-columns: 1fr;
     max-width: 500px;
