@@ -784,7 +784,21 @@ a:hover {
   font-size: 1.1rem;
   font-weight: 400;
   color: var(--cream);
-  white-space: nowrap;
+  /* Wraps only when the name is too long for the row (long entree names) */
+  white-space: normal;
+}
+
+.menu-item-tag {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--neon-blue);
+  border: 1px solid rgba(74, 158, 255, 0.35);
+  border-radius: 2px;
+  padding: 0.1rem 0.35rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
 }
 
 .menu-item-dots {
@@ -1945,5 +1959,55 @@ a:hover {
   .btn {
     width: 100%;
     text-align: center;
+  }
+}
+
+
+/* ─── RESERVATIONS (OpenTable) ──────────────────────────────── */
+.reserve {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 60%),
+    linear-gradient(to bottom, var(--charcoal), var(--midnight));
+}
+
+/* The OpenTable loader injects its own iframe here; we only frame and center it. */
+.reserve-widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Sized to the OpenTable standard widget so the frame is not a wide empty band */
+  max-width: 420px;
+  min-height: 300px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  background: rgba(24, 24, 36, 0.6);
+  border: 1px solid rgba(74, 158, 255, 0.08);
+}
+
+.reserve-widget iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+.reserve-note {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--slate);
+}
+
+.contact-reserve {
+  margin-top: 0.5rem;
+}
+
+.contact-reserve iframe {
+  max-width: 100%;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .reserve-widget {
+    padding: 1rem;
   }
 }
