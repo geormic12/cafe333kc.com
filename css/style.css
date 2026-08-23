@@ -1975,11 +1975,11 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Sized to the OpenTable standard widget so the frame is not a wide empty band */
-  max-width: 420px;
-  min-height: 300px;
+  /* Hugs the OpenTable widget iframe so the frame has no dead space around it */
+  width: fit-content;
+  max-width: 100%;
   margin: 3rem auto 0;
-  padding: 2rem;
+  padding: 1.25rem;
   background: rgba(24, 24, 36, 0.6);
   border: 1px solid rgba(74, 158, 255, 0.08);
 }
